@@ -3,7 +3,7 @@ import data from "./data/data.js";
 import cors from "cors";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 
@@ -12,9 +12,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/products", (req, res) => {
-    res.send(data);
+    res.json(data);
 });
 
-app.listen(PORT, () => {
-    console.log(`Port is running in port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Port is running in port ${port}`);
 })
